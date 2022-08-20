@@ -23,10 +23,18 @@ class CarouselPageAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.Img.setImageResource(data[position])
+        holder.Img.setImageResource(data[position % data.size])
     }
 
-    override fun getItemCount() = data.size
+    override fun getItemCount(): Int {
+        return if (data.size > 0){
+            Int.MAX_VALUE
+        }else{
+            0
+        }
+
+    }
+
 
 
 }

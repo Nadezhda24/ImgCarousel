@@ -40,13 +40,14 @@ class MainActivity : AppCompatActivity() {
             IndicatorsLinearLayout?.addView(imageView)
         }
 
+        viewPager?.currentItem = Int.MAX_VALUE / 2 + 1
         viewPager?.adapter = CarouselPageAdapter(this,Img)
 
         viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 for (item in IndicatorsImg) item.setImageResource(R.drawable.circle)
-                IndicatorsImg[position].setImageResource(R.drawable.circle_choice)
+                IndicatorsImg[position % IndicatorsImg.size ].setImageResource(R.drawable.circle_choice)
             }
 
             override fun onPageScrollStateChanged(state: Int) {
