@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 
 class CarouselPageAdapter(
     private val context: Context,
-    private val data: ArrayList<Int>,
+    private val data: ArrayList<Int>
 ): RecyclerView.Adapter<CarouselPageAdapter.ViewHolder>(){
 
     class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
